@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Latihan Markup</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f8f8f8;
+            }
+
+            header {
+                background-color: #ff6600;
+                padding: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            header img {
+                height: 50px;
+            }
+
+            #menu-utama {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-grow: 1;
+                justify-content: center;
+            }
+
+            #menu-utama li {
+                margin: 0 15px;
+            }
+
+            #menu-utama a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+            }
+            form {
+            position: relative;
+            display: flex;
+            align-items: center;
+            }
+
+            form input[type="text"] {
+            padding: 10px 15px 10px 40px; /* Ruang ekstra untuk ikon di kiri */
+            border-radius: 20px; /* Membuat sudut lebih bulat */
+            border: 1px solid #ccc;
+            width: 250px; /* Memperpanjang input */
+            outline: none;
+            }
+
+            form .search-icon {
+            position: absolute;
+            left: 12px;
+            font-size: 16px;
+            color: #666;
+            }
+
+            #daftar-masakan {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            masakan {
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin: 20px;
+                padding: 15px;
+                width: calc(33.33% - 40px);
+                text-align: center;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            masakan:hover {
+                transform: scale(1.1);
+            }
+
+            masakan img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            masakan h1 {
+                font-size: 20px;
+                color: #333;
+            }
+
+            masakan p {
+                color: #666;
+            }
+
+            masakan a {
+                display: inline-block;
+                margin-top: 10px;
+                padding: 8px 12px;
+                background: #ff6600;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+
+            /* Sidebar Styling */
+            aside {
+            position: fixed;
+            top: 70px;
+            right: -260px;
+            width: 260px;
+            height: calc(100% - 70px);
+            background: linear-gradient(135deg, #ff7b00, #ff3d00);
+            padding: 20px;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+            transition: right 0.4s ease-in-out;
+            color: white;
+            border-radius: 10px 0 0 10px;
+            }
+
+            aside h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            padding-bottom: 5px;
+            }
+
+            aside p {
+            font-size: 14px;
+            line-height: 1.5;
+            }
+
+            aside ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+            }
+
+            aside ul li {
+            margin: 10px 0;
+            }
+
+            aside ul li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+            }
+
+            aside ul li a:hover {
+            background: rgba(255, 255, 255, 0.4);
+            }
+
+            #sidebar-trigger {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 30px; 
+                height: 100%;
+                background: rgba(255, 102, 0, 0.2);
+                cursor: pointer;
+            }
+
+            #sidebar-arrow {
+                position: fixed;
+                top: 50%;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                background: #ff6600;
+                color: white;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: right 0.3s ease-in-out;
+            }
+
+            /* Animasi Sidebar */
+            #sidebar-trigger:hover + aside,
+            aside:hover {
+                right: 0;
+            }
+
+            #sidebar-trigger:hover + aside #sidebar-arrow,
+            aside:hover #sidebar-arrow {
+                left: 10px;
+}
+        </style>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <header>
+                <img src="https://i.pinimg.com/736x/02/1a/85/021a8537b9927291c63d74cfd5af0b4a.jpg" alt="logo" />
+                <ul id="menu-utama">
+                    <li><a href="">home</a></li>
+                    <li><a href="">tutorial</a></li>
+                    <li><a href="">video</a></li>
+                </ul>
+                <form>
+                    <span class="search-icon">⌕</span>
+                    <input type="text" name="search" placeholder="Search..."/>
+                </form>                
+            </header>
+        </div>
+        <section id="daftar-masakan">
+            <masakan>
+                <img src="https://img-global.cpcdn.com/recipes/b8db15486c54bb8e/680x482cq70/cucur-lemak-manis-adabi-resipi-foto-utama.jpg" alt="Gambar Masakan" />
+                <h1> Cucur Adabi</h1>
+                <b>Feb 12, 2007</b> <b>Views : 3,487,497</b>
+                <p>Cucur adalah kue tradisional Indonesia yang terbuat dari tepung beras, santan, gula merah, dan garam.</p>
+                <a href="">Watch This</a>
+            </masakan>
+            <masakan>
+                <img src="https://www.masakapahariini.com/wp-content/uploads/2021/10/Nasi-Pecel-Madiun.jpg" alt="Gambar Masakan" />
+                <h1> Nasi Pecel</h1>
+                <b>Feb 12, 2007</b> <b>Views : 3,487,497</b>
+                <p>Nasi pecel adalah hidangan khas Jawa yang terdiri dari nasi dan sayuran dengan bumbu kacang yang gurih.</p>
+                <a href="">Watch This</a>
+            </masakan>
+            <masakan>
+                <img src="https://asset.kompas.com/crops/_ql2__ouZzO-KO3phcUlukJuWcU=/0x0:0x0/1200x800/data/photo/2020/04/25/5ea421e5c5358.jpeg" alt="Gambar Masakan" />
+                <h1> Bakwan Jagung</h1>
+                <b>Feb 12, 2007</b> <b>Views : 3,487,497</b>
+                <p>Bakwan jagung adalah camilan goreng yang terbuat dari jagung, tepung terigu, dan bahan-bahan lainnya.</p>
+                <a href="">Watch This</a>
+            </masakan>
+            <masakan>
+                <img src="https://www.dapurkobe.co.id/wp-content/uploads/sate-ayam.jpg" alt="Gambar Masakan" />
+                <h1> Sate</h1>
+                <b>Feb 12, 2007</b> <b>Views : 3,487,497</b>
+                <p>Sate adalah hidangan khas Indonesia yang terdiri dari potongan daging (ayam, sapi, kambing, atau ikan) yang ditusuk dengan tusuk lidi (biasanya dari bambu) lalu dipanggang di atas arang, dan disajikan dengan berbagai macam bumbu</p>
+                <a href="">Watch This</a>
+            </masakan>
+        </section>
+        <div id="sidebar-trigger"></div>
+        <aside id="sidebar">
+            <div id="sidebar-arrow">←</div>
+            <h2>Who we are?</h2>
+            <p>ChowChoice.co hadir buat kasih rekomendasi menu terbaik sesuai selera, budget, dan kebutuhanmu!</p>
+            <h2>Masakan Berdasarkan Kategori</h2>
+            <ul>
+                <li><a href="">Makanan</a></li>
+                <li><a href="">Minuman</a></li>
+                <li><a href="">Dessert</a></li>
+                <li><a href="">Snack</a></li>
+                <li><a href="">Menu Diet</a></li>
+                <li><a href="">Out of Topic</a></li>
+            </ul>
+        </aside>
+        <footer>
+            <p>Copyright 2025 by ChowChoice, Nadhif</p>
+        </footer>
+    </body>
+</html>
